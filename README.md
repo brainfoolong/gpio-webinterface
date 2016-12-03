@@ -18,14 +18,14 @@ It is strongly recommended to use it just with the php-cli. Do not use it in com
 `sudo apt-get install php5-cli`
 
 ## Installation
-Download/Clone/Unpack the whole script to a folder you like. Create a php webserver listening on port 4322, you can change the port to whatever you want. Start this with the same user that you need to play the videos. Please do not use apache or other server's to run the php script, it will probably not work.
+Download/Clone/Unpack the whole script to a folder you like. Create a php webserver listening on port 4322, you can change the port to whatever you want. Start this with the same user that can execute the `gpio` executable. Please do not use apache or other server's to run the php script, it will probably not work.
 
 `php -S 0.0.0.0:4322 -t YOURPATHTSCRIPTFOLDER > /dev/null 2>&1 &`
 
 Open the webpage with http://IPTOYOURPI:4322
 
 ## Autostart
-To enable autostart on reboot just add the following line to your crontab. Do this with the same user that you need to play the videos. No `sudo` required.
+To enable autostart on reboot just add the following line to your crontab. Do this with the same user that can execute the `gpio` executable. No `sudo` required.
 Add the following line to crontab with `sudo crontab -e` to start the simple php webserver on reboot
 
 `@reboot php -S 0.0.0.0:4322 -t YOURPATHTSCRIPTFOLDER > /dev/null 2>&1 &`
