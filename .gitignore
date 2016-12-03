@@ -1,0 +1,4 @@
+data/*
+tmp/*
+.idea
+!.gitignore

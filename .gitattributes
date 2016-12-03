@@ -1,0 +1,3 @@
+scripts/*.min.* binary
+stylesheets/*.min.* binary
+text eol=lf
