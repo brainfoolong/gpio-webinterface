@@ -1,6 +1,9 @@
 # Control GPIO's with a webinterface. Simple, powerful
 A easy to use webinterface to control all GPIO in/outputs of your raspberry pi or other device. Enable and disable GPIO just with one button directly with your smartphone, tablet or desktop browser.
 
+<img src="https://brainfoolong.github.io/gpio-webinterface/images/screenshot-1.png" width="40%">
+<img src="https://brainfoolong.github.io/gpio-webinterface/images/screenshot-2.png" width="40%">
+
 ## Features
 * Define GPIOs and watch the status
 * Enable/Disable GPIOs with just one click
