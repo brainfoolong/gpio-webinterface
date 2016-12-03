@@ -517,12 +517,13 @@ h1 {
 
 .gpio-buttons .gpio .inner{
     text-align: center;
-    font-size: 200%;
-    height:200px;
+    font-size: 170%;
+    min-height:200px;
     color: white;
     padding:20px;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 .gpio-buttons .gpio .gpio-label {

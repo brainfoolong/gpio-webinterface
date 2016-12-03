@@ -2,6 +2,7 @@
 namespace Nullix\Gpiowebinterface\View;
 
 use Nullix\Gpiowebinterface\Data;
+use Nullix\Gpiowebinterface\Gpio;
 use Nullix\Gpiowebinterface\View;
 
 /**
@@ -17,15 +18,16 @@ class Index extends View
     public function load()
     {
         if (post("action") == "set") {
-
+            Gpio::sendCommand("mode " . post("pin") . " " . post("mode"));
+            Gpio::sendCommand("write " . post("pin") . " " . post("value"));
+            return;
         }
         if (post("action") == "readall") {
             $gpios = Data::get("gpios");
             $json = [];
             foreach ($gpios as $key => $row) {
-                $out = $ret = "";
-                exec("gpio read " . $row["pin"], $out, $ret);
-                $json[$key] = isset($out[0]) && $out[0];
+                $output = Gpio::sendCommand("read " . $row["pin"]);
+                $json[$key] = isset($output[0]) && $output[0];
             }
             echo json_encode($json);
             return;
@@ -53,9 +55,9 @@ class Index extends View
                         <div class="onoffswitch">
                             <input type="checkbox" name="onoffswitch"
                                    class="onoffswitch-checkbox"
-                                   id="myonoffswitch">
+                                   id="onoff-<?= $key ?>">
                             <label class="onoffswitch-label"
-                                   for="myonoffswitch">
+                                   for="onoff-<?= $key ?>">
                                 <span class="onoffswitch-inner"></span>
                                 <span class="onoffswitch-switch"></span>
                             </label>

@@ -14,4 +14,16 @@ $(function () {
         });
     };
     readall();
+    $(document).on("click", ".gpio-buttons .onoffswitch", function () {
+        var e = $(this).closest(".gpio");
+        console.log(e);
+        setTimeout(function () {
+            $.post(window.location.href, {
+                "action": "set",
+                "pin": e.attr("data-pin"),
+                "value": e.find("input").prop("checked") ? "1" : "0",
+                "mode": e.attr("data-mode")
+            });
+        }, 50);
+    });
 });

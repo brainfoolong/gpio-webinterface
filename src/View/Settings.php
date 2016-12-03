@@ -13,6 +13,12 @@ class Settings extends View
 {
 
     /**
+     * The gpio default path
+     * @var string
+     */
+    public static $gpioDefaultPath = "/usr/local/bin/gpio";
+
+    /**
      * Get content for the page
      */
     public function getContent()
@@ -21,7 +27,6 @@ class Settings extends View
             $gpios = null;
             $postGpios = post("gpio");
             if (is_array($postGpios)) {
-
                 foreach ($postGpios as $key => $value) {
                     foreach ($postGpios[$key] as $subKey => $subValue) {
                         $gpios[$subKey][$key] = $subValue;
@@ -102,7 +107,7 @@ class Settings extends View
             </div>
 
             <div class="spacer">
-                <span class="btn btn-default btn-xs add-gpio"><?= t("settings.folders.add") ?></span>
+                <span class="btn btn-default btn-xs add-gpio"><?= t("settings.gpio.add") ?></span>
             </div>
             <input type="submit" value="<?= t("save") ?>" name="save-gpios"
                    class="btn btn-default btn-info">
@@ -111,6 +116,16 @@ class Settings extends View
 
         <h1><?= t("settings") ?></h1>
         <form name="settings" method="post" action="">
+            <div class="title spacer">
+                <strong><?= t("settings.gpiopath.title") ?></strong>
+                <small><?= t("settings.gpiopath.desc") ?></small>
+            </div>
+            <div class="spacer">
+                <input type="text"
+                       placeholder="<?=self::$gpioDefaultPath?>"
+                       name="setting[gpiopath]"
+                       class="form-control">
+            </div>
 
             <div class="title spacer">
                 <strong><?= t("settings.language.title") ?></strong>
