@@ -33,7 +33,8 @@ Open the webpage with http://IPTOYOURPI:4322
 
 ## Autostart
 To enable autostart on reboot just add the following line to your crontab. Do this with the same user that can execute the `gpio` executable. No `sudo` required.
-Add the following line to crontab with `sudo crontab -e` to start the simple php webserver on reboot
+
+Add the following line to crontab with `crontab -e` to start the simple php webserver on reboot
 
 `@reboot php -S 0.0.0.0:4322 -t YOURPATHTSCRIPTFOLDER > /dev/null 2>&1 &`
 
