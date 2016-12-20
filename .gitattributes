@@ -1,3 +1,6 @@
+* text eol=lf
 scripts/*.min.* binary
 stylesheets/*.min.* binary
-text eol=lf
+*.jpg binary
+*.png binary
+*.ico binary
