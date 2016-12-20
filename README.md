@@ -17,8 +17,12 @@ Feel free to send pull requests. Create an issue for a new feature BEFORE you do
 This interface requires `wiringPi` to be installed. The command `gpio` must be available. It's super easy to install, goto http://wiringpi.com/download-and-install/
 
 ## Requirements
-It is strongly recommended to use it just with the php-cli. Do not use it in combination with a webserver, it will not work. Just use it as described bellow. Only PHP is required. It is also PHP7 compatible.
-`sudo apt-get install php5-cli`
+It is strongly recommended to use it just with the php command line. Maybe it will not work when running with a webserver like apache or nginx. Just use it as described bellow. Only PHP is required. It is also PHP7 compatible. Try all, depending on your system some packages are not available but that is no problem.
+
+    sudo apt-get install php-cli
+    sudo apt-get install php-mbstring
+    sudo apt-get install php5-cli
+    sudo apt-get install php5-mbstring
 
 ## Installation
 Download/Clone/Unpack the whole script to a folder you like. Create a php webserver listening on port 4322, you can change the port to whatever you want. Start this with the same user that can execute the `gpio` executable. Please do not use apache or other server's to run the php script, it will probably not work.
