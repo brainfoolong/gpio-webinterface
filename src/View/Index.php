@@ -45,26 +45,28 @@ class Index extends View
         <div class="gpio-buttons row">
             <?php
             $gpios = Data::get("gpios");
-            foreach ($gpios as $key => $row) {
-                ?>
-                <div class="gpio col-xs-6" data-index="<?= $key ?>"
-                     data-pin="<?= $row["pin"] ?>"
-                     data-mode="<?= $row["mode"] ?>">
-                    <div class="inner">
-                        <div class="gpio-label"><?= $row["label"] ?></div>
-                        <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch"
-                                   class="onoffswitch-checkbox"
-                                   id="onoff-<?= $key ?>">
-                            <label class="onoffswitch-label"
-                                   for="onoff-<?= $key ?>">
-                                <span class="onoffswitch-inner"></span>
-                                <span class="onoffswitch-switch"></span>
-                            </label>
+            if($gpios) {
+                foreach ($gpios as $key => $row) {
+                    ?>
+                    <div class="gpio col-xs-6" data-index="<?= $key ?>"
+                         data-pin="<?= $row["pin"] ?>"
+                         data-mode="<?= $row["mode"] ?>">
+                        <div class="inner">
+                            <div class="gpio-label"><?= $row["label"] ?></div>
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="onoffswitch"
+                                       class="onoffswitch-checkbox"
+                                       id="onoff-<?= $key ?>">
+                                <label class="onoffswitch-label"
+                                       for="onoff-<?= $key ?>">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <?php
+                    <?php
+                }
             }
             ?>
         </div>
