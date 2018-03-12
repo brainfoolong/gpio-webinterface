@@ -4,6 +4,9 @@ A easy to use webinterface to control all GPIO in/outputs of your raspberry pi o
 <img src="https://brainfoolong.github.io/gpio-webinterface/images/screenshot-1.png" width="40%">
 <img src="https://brainfoolong.github.io/gpio-webinterface/images/screenshot-2.png" width="40%">
 
+## Support me
+If you like to buy some coffee, i will appriciate it. You can do this on [Patreon](https://www.patreon.com/brainfoolong) or via [PayPal](https://www.paypal.me/brainfoolong)
+
 ## Features
 * Define GPIOs and watch the status
 * Enable/Disable GPIOs with just one click
