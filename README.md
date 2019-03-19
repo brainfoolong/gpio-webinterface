@@ -1,3 +1,6 @@
+### Project discontinued
+Because of lack of time, i must discontinue this project. It will stay online, it will probably work out of the box. Maybe someone can take over development for this project?! Feel free to fork it.
+
 # Control GPIOs with a webinterface. Simple, powerful
 A easy to use webinterface to control all GPIO in/outputs of your raspberry pi or other device. Enable and disable GPIO just with one button directly with your smartphone, tablet or desktop browser.
 
